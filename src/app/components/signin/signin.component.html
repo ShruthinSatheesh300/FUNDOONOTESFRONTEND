@@ -1,0 +1,46 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+	<mat-card class="body">
+
+		<div fxLayout="column" fxLayoutAlign="center center">
+
+			<mat-card-title>
+				<div fxLayout="row">
+					<div style="color: #4285F4;">F</div>
+					<div style="color: #EA4335;">u</div>
+					<div style="color: #FBBC05;">n</div>
+					<div style="color: #4285F4;">d</div>
+					<div style="color: #34A853;">o</div>
+					<div style="color: #EB4E41;">o</div>
+				</div>
+			</mat-card-title>
+			<h1 style="margin-top: 5px;">Sign in</h1>
+			<h3>Use your Fundoo Account</h3>
+
+		</div>
+		<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+			<mat-form-field appearance="outline" [style.width.%]="95" >
+				<mat-label>Email</mat-label>
+				<input matInput type="email" formControlName="email" />
+				<mat-error> Email is required</mat-error>
+			</mat-form-field>
+			<div style="margin-top: 0.2px; margin-left: 2px;">
+				<button mat-button style="color: #1a73e8;" (click)='onForgetPassword()'>Forgot
+					Password ?</button>
+			</div>
+
+			<mat-form-field appearance="outline" [style.width.%]="95">
+				<mat-label>Password</mat-label>
+				<input matInput [type]="hide?'password':'text'" formControlName="password">
+				<mat-error> Password is required</mat-error>
+			</mat-form-field>
+		</form>
+
+		<div class="show-Password" (click)="showPassword()">
+			<mat-checkbox>Show Password</mat-checkbox>
+		</div>
+		<div fxLayoutAlign="start center" fxLayoutGap="220px" style="margin-top: 5%; margin-left: -2vh;">
+			<button mat-button (click)='onCreateAccount()' style="color: #1a73e8;">Create Account</button>
+			<button mat-raised-button class="button-next" color="primary" (click)="onSubmit()">Next</button>
+		</div>
+	</mat-card>
+</div>
