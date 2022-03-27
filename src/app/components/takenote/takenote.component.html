@@ -1,36 +1,55 @@
-<mat-expansion-panel hideToggle class="takeNote" (opened)="panelOpenState = true" (closed)="panelOpenState = false"
-    #panel>
-    <mat-expansion-panel-header>
-        <mat-panel-title style="align-items: center;" (keydown.Space)="$event.stopPropagation()"
-            (keydown.Enter)="$event.stopPropagation()">
-            <textarea matInput style="overflow: hidden;border: transparent;" matInput cdkTextareaAutosize
-                cdkAutosizeMinRows="2" cdkAutosizeMaxRows="3" [(ngModel)]="Title"
-                placeholder="{{panelOpenState ? 'Title' : 'Take a note..'}}"></textarea>
-        </mat-panel-title>
-        <mat-panel-description style="flex-grow: 0;" *ngIf='!panelOpenState' (click)="panel.toggle()">
-            <button mat-icon-button>
-                <img src="./../../../assets/check_box_black_24dp.svg" alt="check_box" style="opacity: 0.5;">
-            </button>
-            <button mat-icon-button>
-                <img src="./../../../assets/brush_black_24dp.svg" alt="brush" style="opacity: 0.5;">
-            </button>
-            <button mat-icon-button>
-                <img src="./../../../assets/image_black_24dp.svg" alt="image" style="opacity: 0.5;">
-            </button>
-        </mat-panel-description>
-        <mat-panel-description style="flex-grow: 0;" *ngIf='panelOpenState'>
-            <button mat-icon-button (click)="panel.toggle()">
-                <img src="./../../../assets/push_pin_black_24dp.svg" alt="push_pin" style="opacity: 0.8;">
-            </button>
-        </mat-panel-description>
-    </mat-expansion-panel-header>
-    <textarea matInput style="overflow: hidden; border: transparent;" matInput cdkTextareaAutosize
-        cdkAutosizeMinRows="2" cdkAutosizeMaxRows="10" [(ngModel)]="Description" placeholder="Take a note.."></textarea>
-    <div fxLayout="row" fxLayoutAlign="space-between end">
-        <div fxFlex="70">
-        </div>
-        <div><button mat-icon-button (click)="onClose();panel.toggle()" style="opacity: 0.9;">
-                Close
-            </button></div>
-    </div>
-</mat-expansion-panel>
+<div fxLayout="row" fxLayoutAlign="center center" class="center" fxFlex="500px">
+	<mat-expansion-panel hideToggle (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+		(opened)="expansiondiv()" (closed)="closeexpansiondiv()">
+		<mat-expansion-panel-header style="width: 500px; height: auto;">
+
+			<mat-panel-title style="margin-top: 10px;" (keydown.Space)="$event.stopPropagation()"
+				(keydown.Enter)="$event.preventDefault()">
+				<textarea class="textarea" matinput placeholder="{{panelOpenState ? 'Title' : 'Take a note..'}}" style="font-family: 'Google Sans',Roboto,Arial,sans-serif;font-size: 1rem;
+					font-weight: 500;
+					overflow: hidden;background-color: transparent;" [(ngModel)]="Title"></textarea>
+
+				<span class="example-spacer"></span>
+				<div fxLayout="row" fxLayoutAlign="space-evenly center" style="margin-top: 5px;">
+
+
+					<div *ngIf="div1" style="margin-top: -11px;">
+						<span title="New List">
+							<img src="../../../assets/check_box_black_24dp.svg" class="opacity">
+
+						</span>
+						<span style="margin-left: 20px;" title="New note with drawing">
+							<img src="../../../assets/brush_black_24dp.svg" class="opacity">
+
+						</span>
+						<span style="margin-left: 20px;" title="New note with image">
+							<img src="../../../assets/image_black_24dp.svg" class="opacity">
+						</span>
+
+					</div>
+
+
+					<span *ngIf="span1" title="Pin note">
+						<img src="../../../assets/push_pin_black_24dp.svg" class="opacity">
+					</span>
+
+
+				</div>
+
+
+			</mat-panel-title>
+
+		</mat-expansion-panel-header>
+		<div *ngIf="div2" style="height: fit-content;">
+			<textarea style="overflow: hidden;" class="textarea" matinput placeholder="Take a note.."
+				[(ngModel)]="Description"></textarea>
+			<div style="margin-top: 10px; display: flex; flex-direction: row;gap: 250px;">
+				<app-icons></app-icons>
+
+			</div>
+			<div>
+				<button (click)="onclose()" mat-button class="closebutton">Close</button>
+			</div>
+		</div>
+	</mat-expansion-panel>
+</div>
