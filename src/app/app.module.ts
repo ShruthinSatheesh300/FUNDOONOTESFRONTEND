@@ -14,6 +14,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatDialogModule} from '@angular/material/dialog';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrationComponent } from './components/registration/registration.component';
@@ -23,6 +25,9 @@ import { ForgetPasswordComponent } from './components/forget-password/forget-pas
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TakenoteComponent } from './components/takenote/takenote.component';
+import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
+import { IconsComponent } from './components/icons/icons.component';
+import { DisplaynoteComponent } from './components/displaynote/displaynote.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,10 @@ import { TakenoteComponent } from './components/takenote/takenote.component';
     ForgetPasswordComponent,
     ResetPasswordComponent,
     DashboardComponent,
-    TakenoteComponent
+    TakenoteComponent,
+    GetAllNotesComponent,
+    IconsComponent,
+    DisplaynoteComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +59,9 @@ import { TakenoteComponent } from './components/takenote/takenote.component';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatMenuModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
