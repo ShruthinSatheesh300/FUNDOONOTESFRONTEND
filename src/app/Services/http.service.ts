@@ -14,14 +14,14 @@ export class HttpService {
     return this.httpClient.post(this.baseUrl + url, reqData, token && headers)
   }
 
-  getService(url: string, reqData: any, token: boolean = false, headers: any) {
-    return this.httpClient.post(this.baseUrl + url, reqData, token && headers)
+  getService(url: string, token: boolean = false, headers: any) {
+    return this.httpClient.get(this.baseUrl + url,token && headers )
   }
 
   putService(url: string, reqData: any, token: boolean = false, headers: any) {
     return this.httpClient.put(this.baseUrl + url, reqData, token && headers)
   }
-  // PutService(url: string, reqData: any, token: boolean = false, headers: any) {
-  //   return this.httpClient.put(this.baseUrl + url, reqData, token && headers)
-  // }
+  deleteService(url: string, reqData: any, token: boolean = false) {
+    return this.httpClient.delete(this.baseUrl + url, reqData )
+  }
 }
