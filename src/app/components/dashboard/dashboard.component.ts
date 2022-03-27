@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit {
     this.status = this.toggle ? "Enable" : "Disable";
   }
   onnote(){
-    this.router.navigateByUrl('/dashboard/takenote')
+    this.router.navigateByUrl('/dashboard/getallnotes')
   }
 
  
