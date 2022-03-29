@@ -10,6 +10,7 @@ export class GetAllNotesComponent implements OnInit {
 
 
   constructor(private NoteService:NoteService) { }
+  noteList = []
 
   ngOnInit(): void {
     this.getAllNotes();
@@ -17,6 +18,7 @@ export class GetAllNotesComponent implements OnInit {
   getAllNotes() {
     this.NoteService.getAllNotesservice().subscribe((res: any) => {
       console.log(res);
+      this.noteList=res.data;
 
   })
 
