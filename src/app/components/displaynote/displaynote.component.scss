@@ -1,12 +1,18 @@
 .card{
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
-    margin-left: 150px;
-    width: 250px;
-    height: auto;
-    padding: 16px 16px 5px;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    border-width: 1px;
+    height        : fit-content;
+    width         : fit-content;
+    min-height    : 125px;
+    max-height    : 750px;
+    padding       : 16px 16px 8px;
+    border        : 1px solid transparent;
+    border-radius : 9px;
+    border-width  : 1px;
+    margin-bottom : 20px;
  } 
+ .textArea {
+    word-wrap    : break-word;
+    overflow     : hidden;
+    text-overflow: ellipsis;
+ }
