@@ -1,6 +1,6 @@
     <div fxFlexAlign="center">
-        <app-takenote></app-takenote>
+        <app-takenote (createToGetAllNotes)="receiveEvent($event)"></app-takenote> 
     </div>
     <div style="margin-left: 150px;  margin-top: 50px; margin-right: 150px;">
-        <app-displaynote  [notesArray]="noteList"></app-displaynote>
+        <app-displaynote  [notesArray]="noteList"  (displaytogetallnotes)="receiveMessagefromdisplaycard($event)" (noteUpdated)="updatedData($event)"></app-displaynote>
     </div>
