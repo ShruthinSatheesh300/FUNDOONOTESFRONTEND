@@ -11,9 +11,10 @@
 			<div>
 				{{note.Description}}
 			</div>
+			
 		</mat-card-content>
-		<div>
-			<app-icons></app-icons>
+		<div >
+			<app-icons [noteObject]="note" (iconstodisplay)="recievefromiconstodisplaycard($event)" [noteObject]="note" (noteOperation)="operation($event)"></app-icons>
 		</div>
 	</mat-card>
 </div>
