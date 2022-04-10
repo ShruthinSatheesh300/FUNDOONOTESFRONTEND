@@ -6,6 +6,8 @@ import { ForgetPasswordComponent } from './components/forget-password/forget-pas
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
+import { ArchivelistComponent } from './components/archivelist/archivelist.component';
+import { TrashlistComponent } from './components/trashlist/trashlist.component';
 
 const routes: Routes = [
   {path:'registration',component:RegistrationComponent},
@@ -20,6 +22,8 @@ const routes: Routes = [
       {path:'', redirectTo:"/dashboard/getallnotes", pathMatch:'full' },
       // { path: 'takenote', component: TakenoteComponent },
        { path: 'getallnotes', component: GetAllNotesComponent },
+       { path: 'archive', component: ArchivelistComponent},
+       { path: 'trash', component: TrashlistComponent}
     ]
   
   }

@@ -29,6 +29,9 @@ import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.c
 import { IconsComponent } from './components/icons/icons.component';
 import { DisplaynoteComponent } from './components/displaynote/displaynote.component';
 import { UpdateComponent } from './components/update/update.component';
+import { ArchivelistComponent } from './components/archivelist/archivelist.component';
+import { TrashlistComponent } from './components/trashlist/trashlist.component';
+import { AuthGuardServiceService } from './auth-guard-service.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,9 @@ import { UpdateComponent } from './components/update/update.component';
     GetAllNotesComponent,
     IconsComponent,
     DisplaynoteComponent,
-    UpdateComponent
+    UpdateComponent,
+    ArchivelistComponent,
+    TrashlistComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +70,9 @@ import { UpdateComponent } from './components/update/update.component';
     MatMenuModule,
     MatDialogModule
   ],
-  providers: [],
+  providers: [
+    AuthGuardServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
