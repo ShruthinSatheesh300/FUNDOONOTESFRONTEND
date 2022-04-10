@@ -50,4 +50,46 @@ export class NoteService {
     }
     return this.httpService.putService('/note/'+ id,reqData,true,headers)
   }
+  trashNoteService(reqData:any,id:any) {
+    console.log(reqData,id);
+    
+
+
+    let headersOption = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization':  'Bearer ' + this.token		
+      })
+
+    }
+   
+    return this.httpService.putService('/note/bin/'+ id,reqData,true,headersOption)
+  }
+
+  archiveNoteService(reqData:any,id:any){
+
+    let headersOption = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization':  'Bearer ' + this.token		
+      })
+
+    }
+    let url= '/note/archive/'+ id;
+    return this.httpService.putService(url,reqData,true,headersOption)
+  }
+  deleteForeverService(id:any) {
+    console.log(id);
+    
+
+
+    let headers = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization':  'Bearer ' + this.token		
+      })
+
+    }
+    return this.httpService.deleteService('/note/'+ id,true,headers)
+  }
 }
