@@ -19,9 +19,10 @@ export class HttpService {
   }
 
   putService(url: string, reqData: any, token: boolean = false, headers: any) {
+    console.log(reqData)
     return this.httpClient.put(this.baseUrl + url, reqData, token && headers)
   }
-  deleteService(url: string, reqData: any, token: boolean = false) {
-    return this.httpClient.delete(this.baseUrl + url, reqData )
+  deleteService(url: string, token: boolean = false,headers: any) {
+    return this.httpClient.delete(this.baseUrl + url,token && headers  )
   }
 }
