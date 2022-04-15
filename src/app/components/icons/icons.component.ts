@@ -120,7 +120,7 @@ export class IconsComponent implements OnInit {
       Color:color
 
     }
-    this. NoteService.updateNoteService(this.noteId,reqData).subscribe((res: any) => {
+    this. NoteService.updateNoteService(reqData,this.noteId).subscribe((res: any) => {
       console.log(res); 
 
   })
