@@ -11,7 +11,7 @@ export class SigninComponent implements OnInit {
   loginForm!: FormGroup;
   submitted = false;
   hide: boolean = true;
-  user='1'
+  
   constructor(private UserService: UserService, private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
@@ -19,7 +19,7 @@ export class SigninComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     })
-    localStorage.setItem('SeesionUser',this.user)  
+      
   }
 
   onSubmit() {
@@ -34,9 +34,10 @@ export class SigninComponent implements OnInit {
   
       localStorage.setItem('token',res.data);
       console.log(res.data);
+      this.router.navigateByUrl('/dashboard')
       
     })
-    this.router.navigateByUrl('/dashboard')
+    
   }
 
   onCreateAccount() {
