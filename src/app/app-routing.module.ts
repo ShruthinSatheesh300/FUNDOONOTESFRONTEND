@@ -8,7 +8,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
 import { ArchivelistComponent } from './components/archivelist/archivelist.component';
 import { TrashlistComponent } from './components/trashlist/trashlist.component';
-
+import { AuthenticationGuard } from './authentication.guard';
 const routes: Routes = [
   {path:'registration',component:RegistrationComponent},
   {path:'signin',component:SigninComponent},
@@ -17,7 +17,7 @@ const routes: Routes = [
   // {path: 'dashboard',component:DashboardComponent},
 
   {
-    path: 'dashboard',component:DashboardComponent,
+    path: 'dashboard',component:DashboardComponent,canActivate:[AuthenticationGuard],
     children: [
       {path:'', redirectTo:"/dashboard/getallnotes", pathMatch:'full' },
       // { path: 'takenote', component: TakenoteComponent },
