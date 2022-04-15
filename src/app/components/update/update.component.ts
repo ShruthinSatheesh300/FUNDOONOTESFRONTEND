@@ -10,6 +10,7 @@ export class UpdateComponent implements OnInit {
   Title: any
   Description: any
   noteId: any
+  Color: any
 
 
   constructor(private NoteService: NoteService, public dialogRef: MatDialogRef<UpdateComponent>,
@@ -18,6 +19,7 @@ export class UpdateComponent implements OnInit {
     this.Title = data.Title
     this.Description = data.Description
     this.noteId = data._id
+    this.Color = data.Color
 
   }
   @Output() noteUpdated = new EventEmitter<any>();
@@ -29,6 +31,7 @@ export class UpdateComponent implements OnInit {
       Title: this.Title,
       Description: this.Description,
       // noteId:this.noteId
+      Color :this.Color,
 
     }
     console.log('updated', reqData);
