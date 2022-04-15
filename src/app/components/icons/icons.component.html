@@ -7,15 +7,16 @@
 		<img class="icons" src="./../../../assets/person_add_alt_black_24dp.svg" alt="person_add_alt">
 	</button>
 
-	<button style="border: none;" [matMenuTriggerFor]="aboveMenu" *ngIf=!isDeleted>
-		<img class="icons" src="./../../../assets/palette_black_24dp.svg" alt="palette">
-	</button>
-	<div>
+	
+	<div style="margin-bottom: -5px">
+		<button style="background-color: transparent;border: none;" [matMenuTriggerFor]="aboveMenu" *ngIf=!isDeleted>
+			<img class="icons" src="./../../../assets/palette_black_24dp.svg" alt="palette">
+		</button>
 		<mat-menu #aboveMenu="matMenu" yPosition="below">
 			<div class="pop">
 				<div *ngFor='let color of colorarray'>
 					<button style="background-color: transparent;border: none;" (click)="setColor(color)">
-						<mat-icon c [ngStyle]="{color:color}">circle</mat-icon>
+						<mat-icon  [ngStyle]="{color:color}">circle</mat-icon>
 					</button>
 				</div>
 			</div>
