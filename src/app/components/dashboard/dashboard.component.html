@@ -6,13 +6,20 @@
         <img src="./../../../assets/keep_2020q4_48dp.png" alt="image" style="width: 40px; margin-left: 8px;">
         <h1 class="title">Fundoo</h1>
 
-        <mat-form-field class="search-bar" apperance="outline">
-            <mat-label>Search</mat-label>
-            <input matInput type="text" [(ngModel)]="value">
-            <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                <mat-icon>close</mat-icon>
-            </button>
-        </mat-form-field>
+        <div style="display: flex;flex-direction: row;">
+            <mat-card
+                style="margin-left: 100px;border-radius: 10px 10px 10px 10px;border-width: 1px 1px 1px 6px;height: 20px; display: flex;width: 600px;flex-shrink: 300px;">
+                <img src="../../../assets/search_black_24dp.svg"
+                    style="opacity: 0.54; width: 23px ;height: 23px;">
+                <input
+                    style="border: none; width: 600px;overflow: hidden;font-family: 16px Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif; font-size: 16px;"
+                    matInput type="text" [(ngModel)]="value">
+                <button style="margin-top: -3px;" class="menubutton" *ngIf="value" matSuffix mat-icon-button
+                    aria-label="Clear" (click)="value=''">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-card>
+        </div>
 
         <div class="spacer"></div>
         <button mat-icon-button style=" opacity:0.7;">
@@ -47,7 +54,7 @@
                     <button mat-icon-button style=" opacity:0.7">
                         <img src="./../../../assets/edit_black_24dp.svg">
                     </button><span class="button"> Edit labels </span></a>
-                <a mat-list-item class="listbuttons" >
+                <a mat-list-item class="listbuttons">
                     <button mat-icon-button style=" opacity:0.7 " routerLink="archive">
                         <img src="./../../../assets/archive_black_24dp.svg">
                     </button><span class="button"> Archive </span></a>
