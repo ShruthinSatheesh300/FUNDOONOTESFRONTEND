@@ -1,5 +1,5 @@
-<div fxLayout="row" fxLayoutAlign="center center">
-	<mat-card class="body">
+<div fxLayout="row" fxLayoutAlign="center center" >
+	<mat-card class="body"  [ngStyle.xs]="{'margin-top.px': 0,'fxFlex.xs':100,'width.%':90}">
 
 		<div fxFlex="60">
 
@@ -19,7 +19,7 @@
 			</h1>
 			<form [formGroup]=" signupform" (ngSubmit)="onSubmit()">
 				<div class="Fcontainer">
-					<div class="align-field">
+					<div class="align-field" [ngStyle.xs]="{'margin-top.px': 0,'fxFlex.xs':100}">
 						<mat-form-field appearance="outline" >
 							<mat-label>First Name</mat-label>
 							<input matInput type="text" formControlName="firstName">
@@ -40,7 +40,7 @@
 						<mat-hint>You can use letters,numbers & periods</mat-hint>
 					</mat-form-field>
 
-					<div class="align-field">
+					<div class="align-field" [ngStyle.xs]="{'margin-top.px': 0,'fxFlex.xs':100}">
 						<mat-form-field appearance="outline" >
 							<mat-label>Password</mat-label>
 							<input matInput [type]="hide?'password':'text'" formControlName="password">
@@ -65,8 +65,8 @@
 				<button mat-button (click)='onSignin()' style="color: #1a73e8;">Sign in instead</button>
 				<button mat-raised-button class="button-next" color="primary" (click)="onSubmit()">Next</button>
 			</div>
-		</div>
-		<span fxFlex="40" class="signUpImage" div fxLayout="column" fxLayoutAlign="space-around end">
+		</div >
+		<span  fxHide.lt-xs fxFlex="40" class="signUpImage"  fxLayout="column" fxLayoutAlign="space-around end">
 			<img src="./../../../assets/account.svg">
 			<p>One account. All of Fundoo working <br>
 				for you.</p>
