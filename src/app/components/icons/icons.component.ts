@@ -25,7 +25,6 @@ export class IconsComponent implements OnInit {
    colorarray = ['#fff', '#f28b82', '#fbbc04', '#fff475', '#ccff90', '#a7ffeb', '#cbf0f8', '#aecbfa'];
 
   ngOnInit(): void {
-    //  console.log(this.noteObject._id);
     
      this.noteId=[this.noteObject._id]
      let del = this.activatedroute.snapshot.component;
