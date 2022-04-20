@@ -13,7 +13,7 @@
                     style="opacity: 0.54; width: 23px ;height: 23px;">
                 <input
                     style="border: none; width: 600px;overflow: hidden;font-family: 16px Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif; font-size: 16px;"
-                    matInput type="text" [(ngModel)]="value">
+                    matInput type="text" [(ngModel)]="searchword" (keyup)=" searchtitle($event)" >
                 <button style="margin-top: -3px;" class="menubutton" *ngIf="value" matSuffix mat-icon-button
                     aria-label="Clear" (click)="value=''">
                     <mat-icon>close</mat-icon>
