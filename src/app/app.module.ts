@@ -32,6 +32,7 @@ import { UpdateComponent } from './components/update/update.component';
 import { ArchivelistComponent } from './components/archivelist/archivelist.component';
 import { TrashlistComponent } from './components/trashlist/trashlist.component';
 import { AuthGuardServiceService } from './auth-guard-service.service';
+import { FilterPipe } from './Pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { AuthGuardServiceService } from './auth-guard-service.service';
     DisplaynoteComponent,
     UpdateComponent,
     ArchivelistComponent,
-    TrashlistComponent
+    TrashlistComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
