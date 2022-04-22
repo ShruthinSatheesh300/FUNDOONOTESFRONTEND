@@ -6,8 +6,8 @@
     <textarea matInput class="text-Description" [(ngModel)]="Description"></textarea>
 </div>
 <div fxLayout="row" fxLayoutAlign="space-between end">
-    <div>
-        <app-icons  [noteObject]="data"></app-icons>
+    <div fxFlex="70">
+        <app-icons style="padding-bottom: 40%; "     [noteObject]="data"></app-icons>
     </div>
     <div>
         <button mat-icon-button (click)="onClose()" style="opacity: 0.9; margin-right: 10px;" >
